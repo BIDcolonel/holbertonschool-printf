@@ -1,44 +1,38 @@
 #include "main.h"
 
+/**
+*  _printf - function that produces output according to a format
+* @format: character string
+* Return: nb of caracters printed
+*/
+
 int _printf(const char *format, ...)
 {
-    int count = 0, isvalid;
-	int i;
-
-    helpconversion_t helpconversion[] = {
-        {'c', helper_char},
-        {'s', helper_string},
-        {'%', helper_percent},
-        {'\0', NULL}
-    };
-
+	int count = 0;
+	void (*helpFunc)(va_list, int *);
 	va_list listargs;
-    va_start(listargs, format);
 
-    while (*format)
-    {
-        if (*format == '%')
-        {
-            isvalid = 0;
-            format++;
-            for (i = 0; helpconversion[i].format != '\0'; i++)
-            {
-                if (*format == helpconversion[i].format)
-                {
-                    helpconversion[i].helper(listargs, &count);
-                    isvalid = 1;
-                }
-            }
-            if (!isvalid)
-            {
-                print_char('%', &count);
-                print_char(*format, &count);
-            }
-        }
-        else
-            print_char(*format, &count);
-        format++;
-    }
-    va_end(listargs);
-    return (count);
+	va_start(listargs, format);
+
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			format++;
+			helpFunc = getHelperFunction(format);
+
+			if (helpFunc)
+				helpFunc(listargs, &count);
+			else
+			{
+				_printChar('%', &count);
+				_printChar(*format, &count);
+			}
+		}
+		else
+			_printChar(*format, &count);
+		format++;
+	}
+	va_end(listargs);
+	return (count);
 }

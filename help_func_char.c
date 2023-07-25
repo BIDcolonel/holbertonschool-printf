@@ -1,19 +1,24 @@
 #include "main.h"
 
 /**
-* print_char -
+* _printChar - print a char to standart output
+* @c: char to print
+* @count: pointer to the counter of char printed
 */
-void print_char(char c, int *count)
+void _printChar(char c, int *count)
 {
-    _putchar(c);
-    (*count)++;
+	_putchar(c);
+	(*count)++;
 }
 
 /**
-* helper_char -
+* _helperChar - helper func to handle the c format specifier
+* @args: arguments
+* @count: pointer to the counter of character printed
 */
-void helper_char(va_list args, int *count)
+void _helperChar(va_list args, int *count)
 {
-    char c = va_arg(args, int);
-    print_char(c, count);
+	char c = va_arg(args, int);
+
+	_printChar(c, count);
 }

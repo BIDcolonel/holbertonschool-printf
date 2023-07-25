@@ -1,12 +1,14 @@
 #include "main.h"
 
 /**
-* helper_percent -
+* _helperPercent - func to handle the % specifier
+* @args: arguments
+* @count: pointer to the counter of char printed
 */
-void helper_percent(va_list args, int *count)
+void _helperPercent(va_list args, int *count)
 {
-    char c = va_arg(args, int);
-    c = '%';
+	char c = va_arg(args, int);
 
-    print_char(c, count);
+	c = '%';
+	_printChar(c, count);
 }

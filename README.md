@@ -5,15 +5,13 @@
 
 
 ## Welcome
-A rebuild of the standard `printf` function in C. Our project required a function capable of printing with the `%c`, `%s`, and `%%` specifiers to standard output. `printf` returns the number of characters printed (excluding the null byte at the end of strings). We were not asked to handle flag characters, field width, precision, or length.
+A reconstruction of the standard `printf` function in C. Our project requires a function capable of printing with the `%c`, `%s`, and `%%` specifiers on standard output. `printf` returns the number of characters printed (excluding the null byte at the end of strings). We have not been asked to handle identifying characters, field width, precision or length.
+During our course we rarely use the standard C library, and build our own functions and headers. This project will be an example of that.
 
-## The Holberton Way
-Holberton students rarely rely on the C standard library, instead building our own functions and headers as we learn. Here you will see a variety of our builds put to use to build a simple re-imagining of `printf`.
+## The challenge of `printf
+It's a complicated project to tackle. Not really knowing how to approach it, we started asking ourselves how it could work. Then we started to lay the foundations and start coding. After several tedious attempts, we came up with something resembling a base.
 
-## The Beast that is `printf`
-It was daunting to approach a reinvention of `printf`. This is possibly the most refined function in C, with human hours spent on it thought to surpass a decade.
-
-## Format Specifiers
+## Basic Specification Format
 Our team chose to add `%c` ,`%s`, `%%` formatting. We relied on the library we have been building at Holberton as well as new concepts gathered during this project.
 
 ### Supported Format Types
@@ -39,7 +37,6 @@ String: printf("%s", 'This is a string.'); Output: This is a string.
 -   Your code should use the `Betty` style. It will be checked using [betty-style.pl](https://github.com/holbertonschool/Betty/blob/master/betty-style.pl "betty-style.pl") and [betty-doc.pl](https://github.com/holbertonschool/Betty/blob/master/betty-doc.pl "betty-doc.pl")
 -   You are not allowed to use global variables
 -   No more than 5 functions per file
--   In the following examples, the `main.c` files are shown as examples. You can use them to test your functions, but you don’t have to push them to your repo (if you do we won’t take them into account). We will use our own `main.c` files at compilation. Our `main.c` files might be different from the one shown in the examples
 -   The prototypes of all your functions should be included in your header file called `main.h`
 -   Don’t forget to push your header file
 -   All your header files should be include guarded
@@ -65,6 +62,6 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Who-format *.c
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## Acknowledgments
-* The Framework
+* Deepl (for the translation)
 * Cohort 21
 * Holberton school Lille, FRANCE

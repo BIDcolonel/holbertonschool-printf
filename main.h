@@ -6,13 +6,18 @@
 #include <unistd.h>
 #include <limits.h>
 
-int _putchar(char c);
 int _printf(const char *format, ...);
-void _helperPercent(va_list args, int *count);
-void _helperChar(va_list args, int *count);
-void _helperString(va_list args, int *count);
-void _printChar(char c, int *count);
 void (*getHelperFunction(const char *specifier))(va_list, int *);
+
+int _putchar(char c);
+void _printChar(char c, int *count);
+void _helperChar(va_list args, int *count);
+void _helperPercent(va_list args, int *count);
+void _helperString(va_list args, int *count);
+void _helperInt(va_list args, int *count);
+void _helperDecimal(va_list args, int *count);
+void _printNum(int num, int num_digits, int *count);
+int _numLen(int num);
 
 /**
 * struct helpconversion - format specifier and corresponding function

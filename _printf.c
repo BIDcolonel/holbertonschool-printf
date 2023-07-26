@@ -3,9 +3,8 @@
 /**
 *  _printf - function that produces output according to a format
 * @format: character string
-* Return: nb of caracters printed
+* Return: nb of characters printed
 */
-
 int _printf(const char *format, ...)
 {
 	int count = 0;

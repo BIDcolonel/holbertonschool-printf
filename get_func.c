@@ -11,6 +11,8 @@ void (*getHelperFunction(const char *specifier))(va_list, int *)
 		{'c', _helperChar},
 		{'s', _helperString},
 		{'%', _helperPercent},
+		{'d', _helperInt},
+		{'i', _helperInt},
 		{'\0', NULL}
 	};
 

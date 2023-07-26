@@ -48,17 +48,17 @@ void _printNum(int num, int digits, int *count)
 	if (num < 0)
 	{
 		_printChar('-', count);
-		num *= -1; // change le signe de la variable num si négatif w/ char '-'
+		num *= -1;
 	}
 
-	for (i = 1; i < digits; i++) // Calculer la puissance de 10 nécessaire
+	for (i = 1; i < digits; i++)
 		divide *= 10;
 
 	while (divide != 0)
 	{
 		_printChar((num / divide) + '0', count);
-		num %= divide; // maj de num avec le reste de sa division
-		divide /= 10; // divise par 10
+		num %= divide;
+		divide /= 10;
 	}
 }
 

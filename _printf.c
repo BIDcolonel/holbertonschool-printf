@@ -24,6 +24,9 @@ int _printf(const char *format, ...)
 				helpFunc(listargs, &count);
 			else
 			{
+				if (*format == 'C' || *format == 'S')
+					return (-1);
+
 				_printChar('%', &count);
 				_printChar(*format, &count);
 			}

@@ -7,11 +7,8 @@
 */
 int _helperPercent(va_list args)
 {
-	int count = 0;
-	char c = va_arg(args, int);
+	(void)args;
+	_putchar('%');
+	return (1);
 
-	c = '%';
-	_putchar(c);
-
-	return (count);
 }

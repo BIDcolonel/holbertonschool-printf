@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	va_start(listargs, format);
 
 	if (format == NULL)
-		return(-1);
+		return (-1);
 
 	while (*format)
 	{
@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 				count += helpFunc(listargs);
 			else
 			{
-				if (*format == 'C' || *format == 'S')
+				if (*format == 'C' || *format == 'S' || *format == '\0')
 				{
 					va_end(listargs);
 					return (-1);

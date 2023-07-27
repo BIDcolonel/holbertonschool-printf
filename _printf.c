@@ -8,7 +8,7 @@
 int _printf(const char *format, ...)
 {
 	int count = 0;
-	void (*helpFunc)(va_list, int *);
+	int (*helpFunc)(va_list);
 	va_list listargs;
 
 	va_start(listargs, format);
@@ -21,18 +21,25 @@ int _printf(const char *format, ...)
 			helpFunc = getHelperFunction(format);
 
 			if (helpFunc)
-				helpFunc(listargs, &count);
+				count += helpFunc(listargs);
 			else
 			{
 				if (*format == 'C' || *format == 'S')
+				{
+					va_end(listargs);
 					return (-1);
+				}
 
-				_printChar('%', &count);
-				_printChar(*format, &count);
+				_putchar('%');
+				_putchar(*format);
+				count += 2;
 			}
 		}
 		else
-			_printChar(*format, &count);
+		{
+			_putchar(*format);
+			count++;
+		}
 		format++;
 	}
 	va_end(listargs);

@@ -5,15 +5,17 @@
 * @args: args
 * @count: pointer to the counter of characters printed
 */
-void _helperString(va_list args, int *count)
+int _helperString(va_list args)
 {
+	int count = 0;
 	char *str = va_arg(args, char *);
 
 	if (str == NULL)
 		str = "(null)";
 	while (*str)
 	{
-		_printChar(*str, count);
+		_putchar(*str);
 		str++;
 	}
+	return (count);
 }

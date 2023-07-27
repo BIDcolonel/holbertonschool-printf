@@ -5,14 +5,14 @@
 * @specifier: specifier character
 * Return: pointer to the helper function, or NULL if not found
 */
-void (*getHelperFunction(const char *specifier))(va_list, int *)
+int (*getHelperFunction(const char *specifier))(va_list)
 {
 	helpconversion_t helpconversion[] = {
 		{'c', _helperChar},
 		{'s', _helperString},
 		{'%', _helperPercent},
-		{'d', _helperInt},
-		{'i', _helperInt},
+		{'d', _helpNum},
+		{'i', _helpNum},
 		{'\0', NULL}
 	};
 

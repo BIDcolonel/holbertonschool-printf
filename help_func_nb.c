@@ -1,64 +1,51 @@
 #include "main.h"
+#include <ctype.h>
+#include <limits.h>
 
 /**
-* _helperInt - func to handle the int format specifier
-* @args: arguments
-* @count: pointer to the counter of char printed
-*/
-void _helperInt(va_list args, int *count)
-{
-	int num = va_arg(args, int);
-	int digits = _numLen(num);
-
-	_printNum(num, digits, count);
-}
-
-/**
- * _numLen - func to get the nb of digits in a nb
- * @num: number
- * Return: nb of digits
- */
-int _numLen(int num)
-{
-	int count = 0;
-
-	if (num == 0)
-		return (1);
-
-	while (num != 0)
-	{
-		num /= 10;
-		count++;
-	}
-
-	return (count);
-}
-
-/**
- * _printNum - print an int number
+ * _helperNum - print an int number
  * @num: number
  * @digits: number of digits in nb
  * @count: pointer to the counter of char printed
  */
-void _printNum(int num, int digits, int *count)
+int _helpNum(va_list args)
 {
-	int i;
-	int divide = 1;
+	int i, temp, digit, divide = 1, len1 = 0, len2 = 0;
+    int num = va_arg(args, int);
 
-	if (num < 0)
-	{
-		_printChar('-', count);
-		num *= -1;
-	}
+    if (num == INT_MIN)
+    {
+        _putchar('-');
+        _putchar('2');
+        num = 147483648;
+        len2 = 2;
+    }
 
-	for (i = 1; i < digits; i++)
-		divide *= 10;
+    if (num < 0)
+    {
+        _putchar('-');
+        num *= -1;
+        len2 = 1;
+    }
 
-	while (divide != 0)
-	{
-		_printChar((num / divide) + '0', count);
-		num %= divide;
-		divide /= 10;
-	}
+    temp = num;
+    while (temp != 0)
+    {
+        temp /= 10;
+        len1++;
+    }
+
+    divide = 1;
+    for (i = 1; i < len1; i++)
+        divide *= 10;
+
+    while (divide != 0)
+    {
+        digit = num / divide;
+        num %= divide;
+        divide /= 10;
+        _putchar(digit + '0');
+    }
+    return (len1 + len2);
 }
 

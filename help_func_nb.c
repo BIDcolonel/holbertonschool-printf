@@ -4,10 +4,7 @@
 
 /**
  * _helpNum - print an int number
- * @num: number
  * @args: args
- * @digits: number of digits in nb
- * @count: pointer to the counter of char printed
  * Return: len1 + len2
  */
 int _helpNum(va_list args)

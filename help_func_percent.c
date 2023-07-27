@@ -3,7 +3,6 @@
 /**
 * _helperPercent - func to handle the % specifier
 * @args: arguments
-* @count: pointer to the counter of char printed
 * Return: count
 */
 int _helperPercent(va_list args)

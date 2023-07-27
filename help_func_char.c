@@ -2,9 +2,7 @@
 
 /**
 * _helperChar - print a char to standart output
-* @c: char to print
 * @args: args
-* @count: pointer to the counter of char printed
 * Return: 1
 */
 int _helperChar(va_list args)

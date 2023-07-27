@@ -4,6 +4,7 @@
 * _helperString - func to handle the s format specifier
 * @args: args
 * @count: pointer to the counter of characters printed
+* Return: count
 */
 int _helperString(va_list args)
 {

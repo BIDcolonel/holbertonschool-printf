@@ -7,17 +7,13 @@
 #include <limits.h>
 
 int _printf(const char *format, ...);
-void (*getHelperFunction(const char *specifier))(va_list, int *);
+int (*getHelperFunction(const char *specifier))(va_list);
 
 int _putchar(char c);
-void _printChar(char c, int *count);
-void _helperChar(va_list args, int *count);
-void _helperPercent(va_list args, int *count);
-void _helperString(va_list args, int *count);
-void _helperInt(va_list args, int *count);
-void _helperDecimal(va_list args, int *count);
-void _printNum(int num, int num_digits, int *count);
-int _numLen(int num);
+int _helperChar(va_list args);
+int _helperPercent(va_list args);
+int _helperString(va_list args);
+int _helpNum(va_list args);
 
 /**
 * struct helpconversion - format specifier and corresponding function
@@ -28,7 +24,7 @@ int _numLen(int num);
 typedef struct helpconversion
 {
 	char format;
-	void (*helper)(va_list args, int *count);
+	int (*helper)(va_list args);
 } helpconversion_t;
 
 #endif

@@ -1,9 +1,9 @@
 .TH _printf 3 "24 July 2023" "" "_printf man page"
 .SH NAME
-_printf - a simplified replica of the standard printf function
+_printf - a simplified replica of the standard printf function.
 
 .SH LIBRARY
-Use prototype function
+Use prototype function and standard library for <stdlib.h> <stdarg.h> <unistd.h> and <limits.h>.
 
 .SH SYNOPSIS
 .B #include \(dqmain.h\(dq
@@ -19,13 +19,13 @@ On success, \fB_printf\fR returns the number of characters printed.
 .SH CONVERSION SPECIFERS
 .TP
 d, i
-Print a decimal digit
+Print a decimal digit.
 .TP
 c
-Print a character on standard output
+Print a character on standard output.
 .TP
 s
-Print the characters up to but not including the trailing null byte are written
+Print the characters up to but not including the trailing null byte are written.
 .TP
 %
 A '%' is written. No arguments are converted.
@@ -55,7 +55,7 @@ int main(void)
 .PP
 
 .SH AUTHOR
-Quignon Valentine, Boudier Christophe
+Quignon Valentine and Boudier Christophe.
 
 .SH BUGS
 Work in progress. Let's hope there will be more by the end of the week.

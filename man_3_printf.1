@@ -1,0 +1,61 @@
+.TH _printf 3 "24 July 2023" "" "_printf man page"
+.SH NAME
+_printf - a simplified replica of the standard printf function.
+
+.SH LIBRARY
+Use prototype function and standard library for <stdlib.h> <stdarg.h> <unistd.h> <ctype.h> and <limits.h>.
+
+.SH SYNOPSIS
+.B #include \(dqmain.h\(dq
+
+.BI "int _printf(const char *" "format, ..." ");"
+
+.SH DESCRIPTION
+The _printf function produces output in accordance with the format described below.
+
+.SH RETURN VALUE
+On success, \fB_printf\fR returns the number of characters printed.
+
+.SH CONVERSION SPECIFERS
+.TP
+d, i
+Print a decimal digit.
+.TP
+c
+Print a character on standard output.
+.TP
+s
+Print the characters up to but not including the trailing null byte are written.
+.TP
+%
+A '%' is written. No arguments are converted.
+
+.SH COMPLIANCE
+. TP
+The function _printf complies with C89.
+
+.SH EXAMPLE
+To print text mixed with a \fIstring\fR variable and an \fIinteger\fR variable :
+.PP
+.nf
+.RS
+#include "main.h"
+
+int main(void)
+{
+        int number = 21;
+        char *str = "new";
+
+        _printf("Holberton School, present you the %s students who will be joining the cohort %d this year.\n", str, number);
+
+        return (0);
+}
+
+.fi
+.PP
+
+.SH AUTHOR
+Quignon Valentine and Boudier Christophe.
+
+.SH BUGS
+Work in progress. Let's hope there will be more by the end of the week.

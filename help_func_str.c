@@ -8,14 +8,21 @@
 int _helperString(va_list args)
 {
 	int count = 0;
-	char *str = va_arg(args, char *);
+	char *str;
+
+	str = va_arg(args, char *);
 
 	if (str == NULL)
+	{
+		free(str);
 		str = "(null)";
+	}
+
 	while (*str)
 	{
 		_putchar(*str);
 		str++;
+		count++;
 	}
 	return (count);
 }

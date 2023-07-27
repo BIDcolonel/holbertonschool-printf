@@ -24,7 +24,7 @@ int _helpNum(va_list args);
 typedef struct helpconversion
 {
 	char format;
-	int (*helper)(va_list args);
+	int (*helper)(va_list);
 } helpconversion_t;
 
 #endif

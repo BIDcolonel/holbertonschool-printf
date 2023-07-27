@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <limits.h>
+#include <ctype.h>
 
 int _printf(const char *format, ...);
 int (*getHelperFunction(const char *specifier))(va_list);

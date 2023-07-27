@@ -23,6 +23,10 @@
 - The prototypes of all our functions are included in our header file called `main.h`
 - All our header files should be include guarded
 
+## 📊  Flowchart
+
+![](https://media.discordapp.net/attachments/1130868842197962864/1133472065794605147/Capture_decran_2023-07-25_a_20.52.48.png?width=866&height=1042)
+
 ## Step1 - How to Use the _printf Function
 
 The _printf function is used in the same way as the standard printf function from the C standard library.
@@ -46,9 +50,11 @@ Our team chose to add `%c` ,`%s`, `%%`, `%d` & `%i`  formatting. We relied on th
 | d | integer in base 10 |
 | i | integer in base 10 |
 
+❗️Please note: The **_printf function** does not support all the features of the standard printf function from the C standard library. Other format specifiers and flags are not currently supported in this custom implementation.
+
 ### 🔄 Return Value
 
-The _printf function returns the number of characters displayed or `-1 `in case of an error.
+The **_printf function** returns the number of characters displayed or `-1 `in case of an error.
 
 ## Step3 - Compilation
 To compile the project, the GCC (GNU Compiler Collection) compiler can be use with the following command:
@@ -68,7 +74,7 @@ int main(void)
         return (0);
 }
 ```
-↪️ Output:
+↪️  <strong>Output</strong>
 
 `Holberton School presents the new students who will be joining the cohort 21 this year.  The number of characters printed: 92.`
 
@@ -101,7 +107,7 @@ int main(void)
     return (0);
 }
 ```
-↪️ Output:
+↪️ <strong>Output</strong>
 
 ```bash
 Let's try to printf a simple sentence.
